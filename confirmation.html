@@ -1,0 +1,68 @@
+
+<script>
+$(document).ready(function(){
+  document.getElementById("MovieHeading").innerHTML=sessionStorage.getItem("MovieName");
+  document.getElementById("Language").innerHTML=sessionStorage.getItem("Language");
+  $('#Poster').attr('src',sessionStorage.getItem("MoviePoster"));
+  document.getElementById("Cinema").innerHTML=sessionStorage.getItem("Cinema");
+  document.getElementById("CityName").innerHTML=sessionStorage.getItem("City");
+  document.getElementById("MovieDate").innerHTML=sessionStorage.getItem("Moviedate");
+  document.getElementById("NoofSeats").innerHTML=sessionStorage.getItem("NoofSeats");
+  document.getElementById("SeatClass").innerHTML=sessionStorage.getItem("Class");
+  document.getElementById("SeatNo").innerHTML=sessionStorage.getItem("SeatNos");
+  document.getElementById("Amount").innerHTML=sessionStorage.getItem("Amt");
+  document.getElementById("ShowTime").innerHTML=sessionStorage.getItem("ShowTime");
+  var d=new Date();
+  document.getElementById("BookingDateTime").innerHTML=d.toString().substring(0,25);
+});
+</script>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="alert alert-info">
+        <h3><span class="glyphicon glyphicon-ok"></span> Thanks for your purchase !!!..</h3>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+		<div class="col-lg-12">
+			<div class="row alert alert-success">
+				<div class="col-lg-8">
+					<div class="row well">
+						<div class="col-lg-3">
+              <img  src="assets/images/img17.jpg" width="150" height="200" />
+						</div>
+						<div class="col-lg-6">
+              <h4 id="MovieHeading"></h4>
+              <p><span id="Language"></span></p>
+              <p><span id="Cinema"></span>, <span id="CityName"></span></p>
+              <p><span id="ShowTime"></span> | <span id="MovieDate"></span></p>
+              <b>No of seats booked: <span id="NoofSeats"></span></b>
+              <h4 class="text-success"><span id="SeatClass"></span> - <span id="SeatNo"></span></h4>
+              <hr/>
+              <h4>Amount Paid : Rs. <span id="Amount"></span></h4>
+						</div>
+						<div class="col-lg-3">
+              <img src="assets/images/qr-code.jpg"/>
+              <p style="margin-left:15px">Booking ID</p>
+              <h4>W7MW8WL</h4>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4">
+          <div class="well">
+            <p>Booking Date & Time : <b id="BookingDateTime"></b></p>
+            <p>Payment Method : <b>Credit Card</b></p>
+            <p>Confirmation Number : <b>79985846</b></p>
+          </div>
+          <img src="assets/images/offer2.jpg" width="350" height="150"/>
+				</div>
+			</div>
+		</div>
+	</div>
+        <img src="assets/images/offer1.jpg" width="1150" height="250"><br><br>
+        <img src="assets/images/offer 5.jpg" width="500" height="250">&nbsp;&nbsp;&nbsp;
+        <img src="assets/images/offer4r.jpg" width="600" height="250">
+    </div>
+  </div>
+</div>

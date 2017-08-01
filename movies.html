@@ -1,0 +1,86 @@
+<h3>Welcome To the Movies World..</h3>
+
+<div class="container">
+
+
+	<div class="row">
+		<div class="col-lg-12">
+			<form>
+
+				<input type="text" placeholder="Movie Name" value="" class="form-control" ng-model="moviesCtrl.MovieName"/><br>
+					<input type="text" placeholder="Movie Year" value="" class="form-control" ng-model="moviesCtrl.MovieYear"/><br><br/>
+					<button type="button" class="btn btn-primary" ng-click="moviesCtrl.SearchMovie()"> SearchMovie</button>
+
+			</form>
+		</div>
+	</div>
+
+<div class="row">
+	<div class="col-lg-12">
+
+		<table class="table table-default">
+			<thead>
+				<tr>
+
+					<th>Poster</th>
+					<th>Title</th>
+					<th>Year</th>
+					<th>Genre</th>
+					<th>StarCast</th>
+					<th>Language</th>
+					<th>Duration</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						<img width="203" height="285" src="{{moviesCtrl.MovieDetails.cov}}">
+					</td>
+					<td>{{moviesCtrl.MovieDetails.title}}</td>
+					<td>{{moviesCtrl.MovieDetails.year}}</td>
+					<td>{{moviesCtrl.MovieDetails.gen}}</td>
+					<td>{{moviesCtrl.MovieDetails.cast}}</td>
+					<td>{{moviesCtrl.MovieDetails.lang}}</td>
+					<td>{{moviesCtrl.MovieDetails.dur}}</td>
+					<td><button type="button" class="btn btn-default" ng-click="moviesCtrl.addMovie()"><span class="glyphicon glyphicon-plus"></span></button></td>
+					<td><button type="submit" class="btn btn-danger" ng-click="moviesCtrl.deleteMovie(movie)"><span class="glyphicon glyphicon-trash"></span></button></td>
+
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+			<table class="table table-default table-hover">
+        <caption><h3 class="text-primary"><u>Added Movies</u></h3></caption>
+				<thead>
+				<tr>
+					<th>Title</th>
+					<th>Language</th>
+					<th>Genre</th>
+
+
+					<th>Year</th>
+					<th>Duration</th>
+				</tr>
+			</thead>
+			<tbody>
+      <tr ng-repeat="movie in moviesCtrl.MovieData">
+        <td>{{movie.Title}}</td>
+				<td>{{movie.Language}}</td>
+				<td>{{movie.Genre}}</td>
+
+				<td>{{movie.Year}}</td>
+				<td>{{movie.Duration}}</td>
+				<td><button type="submit" class="btn btn-danger" ng-click="moviesCtrl.remove(movie)"><span class=" glyphicon glyphicon-trash"></span></button></td>
+			</td>
+      </tr>
+		</tbody>
+    </table>
+    </div>
+		</div>
+
+
+</div>
